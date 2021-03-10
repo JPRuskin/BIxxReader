@@ -1,0 +1,74 @@
+{
+	"name": "bixxreader",
+	"displayName": "BIxxReader",
+	"description": "Allows reading of the files exported by BI products",
+	"version": "0.0.1",
+	"publisher": "jpruskin",
+	"engines": {
+		"vscode": "^1.52.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCustomEditor:bixxreader",
+		"workspaceContains:**/*.bidb",
+		"workspaceContains:**/*.bidm",
+		"workspaceContains:**/*.birt"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/jpruskin/BIxxReader.git"
+	},
+	"main": "./out/extension.js",
+	"contributes": {
+		"customEditors": [
+			{
+				"viewType": "bixxreader",
+				"displayName": "BI Exported File",
+				"selector": [
+					{
+						"filenamePattern": "*.bidb"
+					},
+					{
+						"filenamePattern": "*.birt"
+					},
+					{
+						"filenamePattern": "*.bidm"
+					}
+				],
+				"priority": "default"
+			}
+		],
+		"commands": [],
+		"languages": [
+			{
+				"id": "biexport",
+				"extensions": [
+					".bidb",
+					".bidm",
+					".birt"
+				]
+			}
+		],
+		"menus": {}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"lint": "eslint . --ext .ts,.tsx",
+		"watch": "tsc -w -p ./"
+	},
+	"devDependencies": {
+		"@types/node": "^12.12.0",
+		"@types/vscode": "^1.52.0",
+		"@typescript-eslint/eslint-plugin": "^4.16.0",
+		"@typescript-eslint/parser": "^4.16.0",
+		"eslint": "^7.21.0",
+		"typescript": "^4.2.2"
+	},
+	"dependencies": {
+		"jsonminify": "^0.4.1",
+		"jszip": "^3.6.0"
+	}
+}
