@@ -40,7 +40,12 @@
 				"priority": "default"
 			}
 		],
-		"commands": [],
+		"commands": [
+			{
+				"command": "BIxxReader.Edit",
+				"title": "Edit BIxx Content"
+			}
+		],
 		"languages": [
 			{
 				"id": "biexport",
@@ -51,7 +56,15 @@
 				]
 			}
 		],
-		"menus": {}
+		"menus": {
+			"explorer/context": [
+				{
+					"command": "BIxxReader.Edit",
+					"when": "resourceLangId == biexport",
+					"group": "0_bixx@1"
+				}
+			]
+		}
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",

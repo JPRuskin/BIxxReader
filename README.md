@@ -17,3 +17,4 @@ Open the example files from the `exampleFiles` directory.
 - Add tests
 - Add build
 - Publish to the gallery
+- Add Outline Support / some form of fast navigation to the WebView
